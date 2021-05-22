@@ -3,7 +3,7 @@ import BusinessList from "../BusinessList/BusinessList";
 import "./App.css";
 import { useEffect, useState } from 'react';
 const apiKey = "tEPwEgZ3zk2feFeNjTFc0k9opRiHHUDk70UKmXc3NmZf0XNGe3-GK_tTYqo-vWXzuAARlodAhdLRczy2EG829IkKU1xY99IifRboM4PPA2Kkb2pY0npbw4jJavVSYHYx"
-// const proxy = "https://damp-peak-01929.herokuapp.com/";
+const proxy = "https://cryptic-gorge-73294.herokuapp.com/";
 const url = "https://api.yelp.com/v3/businesses/search?";
 
 const initialBusinesses = {
@@ -28,7 +28,7 @@ function App() {
         }else{ 
           setAlert(false);
         }
-        const response = await fetch(`${url}term=${params.term}&location=${params.location}&sort_by=${params.sortBy}`, {
+        const response = await fetch(`${proxy}${url}term=${params.term}&location=${params.location}&sort_by=${params.sortBy}`, {
           headers: { Authorization: `Bearer ${apiKey}` }
         });
         const data = await response.json();
